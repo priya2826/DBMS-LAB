@@ -1,0 +1,57 @@
+                        LAB MANUAL -4
+SQL> CREATE TABLE Customers
+  2  (
+  3  customer_id varchar (9) ,
+  4  first_name varchar (30) ,
+  5  last_name varchar (35) ,
+  6  country varchar (40));
+
+Table created.
+SQL> CREATE TABLE Orders(customer_id varchar(9),amount number(5),country varchar(40));
+
+Table created.
+
+SQL> INSERT INTO Customers VALUES (1,'YUVA','RAJ','India') ;
+
+1 row created.
+
+SQL> INSERT INTO Customers VALUES (2,'VIGNESH','KUMAR','USA');
+
+1 row created.
+
+SQL> INSERT INTO Customers VALUES (3,'MADHU','MITHA','France');
+
+1 row created.
+
+SQL> INSERT INTO Orders VALUES (1,1500,'India') ;
+
+1 row created.
+
+SQL> INSERT INTO Orders VALUES (2,2000,'USA') ;
+
+1 row created.
+
+SQL> INSERT INTO Orders VALUES (3,'3000','France') ;
+
+1 row created.
+
+SQL> CREATE VIEW us_customer As SELECT customer_id, first_name FROM
+  2  Customers WHERE country = 'USA' ;
+
+View created.
+
+SQL> CREATE OR REPLACE VIEW us_customers As SELECT * FROM Customers
+  2  WHERE country = 'USA';
+
+View created.
+
+SQL> CREATE VIEW orders_details As SELECT Customers.customer_id,
+  2  first_name, Orders.amount FROM Customers JOIN Orders ON
+  3  Customers.customer_id = Orders.customer_id ;
+
+View created.
+
+SQL> DROP VIEW us_customers ;
+
+View dropped.
+
