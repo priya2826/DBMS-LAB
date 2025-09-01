@@ -1,0 +1,261 @@
+             LAB MANUAL-3
+
+SQL> CREATE TABLE Emp01
+  2  (
+  3  eno number(3),
+  4  ename varchar(30),
+  5  dept varchar(50),
+  6  salary number
+  7  );
+
+Table created.
+
+SQL> INSERT INTO Emp01 VALUES (1,'RAJU','PHILOSOPHY',90000);
+
+1 row created.
+
+SQL> INSERT INTO Emp01 VALUES (2,'AKILA','ENGLISH',80000) ;
+
+1 row created.
+
+SQL> INSERT INTO Emp01 VALUES (3,'PADMA','HISTORY',60000) ;
+
+1 row created.
+
+SQL> INSERT INTO Emp01 VALUES (4,'SANJAY','MECH',100000) ;
+
+1 row created.
+
+SQL> INSERT INTO Emp01 VALUES (5,'LATHA','BIOLOGY',50000) ;
+
+1 row created.
+
+SQL> SELECT * FROM Emp01 ;
+
+       ENO ENAME
+---------- ------------------------------
+DEPT                                                   SALARY
+-------------------------------------------------- ----------
+         1 RAJU
+PHILOSOPHY                                              90000
+
+         2 AKILA
+ENGLISH                                                 80000
+
+         3 PADMA
+HISTORY                                                 60000
+
+
+       ENO ENAME
+---------- ------------------------------
+DEPT                                                   SALARY
+-------------------------------------------------- ----------
+         4 SANJAY
+MECH                                                   100000
+
+         5 LATHA
+BIOLOGY                                                 50000
+
+
+SQL> DESC Emp01 ;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(3)
+ ENAME                                              VARCHAR2(30)
+ DEPT                                               VARCHAR2(50)
+ SALARY                                             NUMBER
+
+SQL> SELECT avg (salary) "average salary" FROM Emp01 ;
+
+average salary
+--------------
+         76000
+
+SQL> SELECT min (salary) "minimum salary" FROM Emp01 ;
+
+minimum salary
+--------------
+         50000
+
+SQL> SELECT max (salary) "maximum salary" FROM Emp01 ;
+
+maximum salary
+--------------
+        100000
+
+SQL> SELECT count (eno) "number of employees" FROM Emp01 ;
+
+number of employees
+-------------------
+                  5
+
+SQL> SELECT sum (salary) "number of salary" FROM Emp01 ;
+
+number of salary
+----------------
+          380000
+
+SQL> SELECT abs (20) "absolute value" FROM Dual ;
+
+absolute value
+--------------
+            20
+
+SQL> SELECT round (1738.56) "round" FROM Dual ;
+
+     round
+----------
+      1739
+
+SQL> SELECT power (3,2) "power" FROM Dual;
+
+     power
+----------
+         9
+
+SQL> SELECT sqrt (25) "square root" FROM Dual ;
+
+square root
+-----------
+          5
+
+SQL> SELECT exp (5) "exponent" FROM Dual ;
+
+  exponent
+----------
+148.413159
+
+SQL> SELECT extract (year from date'2018-07-07') "year" FROM Dual ;
+
+      year
+----------
+      2018
+
+SQL> SELECT extract (month from sysdate) "month" FROM Dual ;
+
+     month
+----------
+         9
+
+SQL> SELECT greatest (4,10,20) "number" FROM Dual ;
+
+    number
+----------
+        20
+
+SQL> SELECT mod (15,8) "number" FROM Dual ;
+
+    number
+----------
+         7
+
+SQL> SELECT trunc (138.356,1) "number" FROM Dual ;
+
+    number
+----------
+     138.3
+
+SQL> SELECT floor (28.6) "number" FROM Dual ;
+
+    number
+----------
+        28
+
+SQL> SELECT ceil (38.6) "number" FROM Dual ;
+
+    number
+----------
+        39
+
+SQL> SELECT lower (ename) FROM Emp01 ;
+
+LOWER(ENAME)
+------------------------------
+raju
+akila
+padma
+sanjay
+latha
+
+SQL> SELECT initcap (ename) FROM Emp01 ;
+
+INITCAP(ENAME)
+------------------------------
+Raju
+Akila
+Padma
+Sanjay
+Latha
+
+SQL> SELECT upper (ename) FROM Emp01 ;
+
+UPPER(ENAME)
+------------------------------
+RAJU
+AKILA
+PADMA
+SANJAY
+LATHA
+
+SQL> SELECT substr ('welcome',3,2) FROM Dual ;
+
+SU
+--
+lc
+
+SQL> SELECT ascii ('a') FROM Dual ;
+
+ASCII('A')
+----------
+        97
+
+SQL> SELECT length ('priyanka') FROM Dual ;
+
+LENGTH('PRIYANKA')
+------------------
+                 8
+
+SQL> SELECT last_day (sysdate) FROM Dual ;
+
+LAST_DAY(
+---------
+30-SEP-25
+
+SQL> SELECT add_months (sysdate, 5) FROM Dual ;
+
+ADD_MONTH
+---------
+01-FEB-26
+
+SQL> SELECT months_between ('02-feb-1992','08-oct-1992') FROM Dual ;
+
+MONTHS_BETWEEN('02-FEB-1992','08-OCT-1992')
+-------------------------------------------
+                                 -8.1935484
+
+SQL> SELECT next_day ('04-jul-2018','tuesday') FROM Dual ;
+
+NEXT_DAY(
+---------
+10-JUL-18
+
+SQL> SELECT to_date ('04-jul-2018','dd-mm-yy') FROM Dual ;
+
+TO_DATE('
+---------
+04-JUL-18
+
+SQL> SELECT ltrim ('table name','d') FROM Dual;
+
+LTRIM('TAB
+----------
+table name
+
+SQL> SELECT rtrim ('table name','a') FROM Dual ;
+
+RTRIM('TAB
+----------
+table name
+
+
+
