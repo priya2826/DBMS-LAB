@@ -1,0 +1,71 @@
+             LAB MANAUAL -5
+SQL> create table emprecords(eno number(3),ename varchar(8),address varchar(20));
+
+Table created.
+
+SQL> insert into emprecords values(1,'lia','salem');
+
+1 row created.
+
+SQL> insert into emprecords values(2,'dishona','salem');
+
+1 row created.
+
+SQL> insert into emprecords values(3,'srimathi','madurai');
+
+1 row created.
+
+SQL> insert into emprecords values(4,'selvi','madurai');
+
+1 row created.
+
+SQL> select*from emprecords;
+
+       ENO ENAME    ADDRESS
+---------- -------- --------------------
+         1 lia      salem
+         2 dishona  salem
+         3 srimathi madurai
+         4 selvi    madurai
+
+SQL> alter table emprecords ADD age number(2);
+
+Table altered.
+
+SQL> update emprecords set age=18 where address='madurai';
+
+2 rows updated.
+
+SQL> alter table emprecords modify ename varchar(30);
+
+Table altered.
+
+SQL> select*from emprecords;
+
+       ENO ENAME                          ADDRESS                     AGE
+---------- ------------------------------ -------------------- ----------
+         1 lia                            salem
+         2 dishona                        salem
+         3 srimathi                       madurai                      18
+         4 selvi                          madurai                      18
+
+SQL> alter table emprecords drop column age;
+
+Table altered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
