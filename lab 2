@@ -1,0 +1,94 @@
+                                         DATAFLAIR
+SQL> CREATE TABLE dataflair(empid varchar(5),name varchar(10),location varchar(10),experience number);
+
+Table created.
+ SQL> CREATE TABLE location(location_id varchar(50),location varchar(50),office_size number,empid varchar(5));
+
+Table created.
+                                 
+  SQL> INSERT INTO Dataflair VALUES (1,'ABI','CHENNAI',1) ;
+
+1 row created.
+
+SQL> INSERT INTO Dataflair VALUES (2,'AADHI','COIMBATORE',2);
+
+1 row created.
+
+SQL> INSERT INTO Dataflair VALUES (3,'SAKTHI','ERODE',2);
+
+1 row created.
+
+SQL> INSERT INTO Dataflair VALUES (4,'SIVA','TRICHY',1) ;
+
+1 row created.
+
+SQL> INSERT INTO Dataflair VALUES (5,'RAJ','SALEM',3);
+
+1 row created.
+
+SQL> INSERT INTO Location VALUES (123,'CHENNAI',5,1) ;
+
+1 row created.
+
+SQL> INSERT INTO Location VALUES (124,'COIMBATORE',10,2);
+
+1 row created.
+
+SQL> INSERT INTO Location VALUES (126,'ERODE',20,3) ;
+
+1 row created.
+
+SQL> INSERT INTO Location VALUES (125,'TRICHY',15,4) ;
+
+1 row created.
+
+SQL> INSERT INTO Location VALUES (127,'SALEM',25,5) ;
+
+1 row created.
+
+SQL> SELECT * FROM Dataflair ;
+
+EMPID NAME       LOCATION   EXPERIENCE
+----- ---------- ---------- ----------
+1     ABI        CHENNAI                  1
+2     AADHI      COIMBATORE       2
+3     SAKTHI     ERODE                 2
+4     SIVA       TRICHY                   1
+5     RAJ        SALEM                     3
+
+SQL> SELECT * FROM Location ;
+
+LOCATION_ID
+--------------------------------------------------
+LOCATION                                           OFFICE_SIZE EMPID
+-------------------------------------------------- ----------- -----
+123
+CHENNAI                                                      5 1
+
+124
+COIMBATORE                                              102
+126
+ERODE                                                       20 3
+
+
+LOCATION_ID
+--------------------------------------------------
+LOCATION                                           OFFICE_SIZE EMPID
+-------------------------------------------------- ----------- -----
+125
+TRICHY                                                      15 4
+
+127
+SALEM                                                       25 5
+
+SQL> SELECT Dataflair.empid, name, Dataflair.location from Dataflair, Location
+    WHERE Dataflair.empid = Location.empid ;
+
+EMPID NAME       LOCATION
+----- ---------- ----------
+1     ABI        CHENNAI
+2     AADHI      COIMBATORE
+3     SAKTHI     ERODE
+4     SIVA       TRICHY
+5     RAJ        SALEM
+
